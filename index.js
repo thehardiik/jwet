@@ -15,7 +15,11 @@ const secretKey = "abcde";
 //console.log(createToken(header, payload, secretKey))
 //console.log(verifyToken("eyJhbGciOiJIUzI1NiIsInR5cGUiOiJKV1QifQ.eyJuYW1lIjoiSGFyZGlrIFNyaXZhc3RhdiIsImRldmljZSI6IlJlYWxtZUMzIn0.a2b1407b7ed39cec6f82165c9028e7c591ab9a8d58bc9c9e85686fdc4505b205" , secretKey))
 
-function createToken(header, payload, secretKey){
+function createToken(payload, secretKey){
+    const header = {
+        alg: "HS256",
+        type: "JWT"
+    }
     const encodedHeader = Buffer.from(JSON.stringify(header)).toString('base64url')
     const encodedPayload = Buffer.from(JSON.stringify(payload)).toString('base64url')
 
