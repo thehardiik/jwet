@@ -1,0 +1,12 @@
+{
+  "name": "jwet",
+  "version": "1.0.0",
+  "description": "An npm package to create json web token with encrypted payload",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Hardik Srivastav",
+  "license": "ISC"
+  
+}
