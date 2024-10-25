@@ -1,6 +1,6 @@
 {
   "name": "jwet",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "An npm package to create json web token with encrypted payload",
   "main": "index.js",
   "scripts": {
