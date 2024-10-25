@@ -40,7 +40,7 @@ function verifyToken(token, secretKey){
     const data = token.split(".");
     const hmac = crypto.createHmac('sha256', secretKey).update(data[0] + '.' + data[1])
     const hmacDigest = hmac.digest('hex');
-    const encodedSignature = Buffer.from(hmacDigest).toString('base64url')
+    const encodedSignature = base64urlencoding(Buffer.from(hmacDigest))
 
     if(encodedSignature === data[2]){
         return true
