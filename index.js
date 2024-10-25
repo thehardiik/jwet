@@ -12,7 +12,7 @@ const payload = {
 
 const secretKey = "abcde";
 const token = "eyJhbGciOiJIUzI1NiIsInR5cGUiOiJKV1QifQ.eyJuYW1lIjoiSGFyZGlrIFNyaXZhc3RhdiIsImRldmljZSI6IlJlYWxtZUMzIn0.YTJiMTQwN2I3ZWQzOWNlYzZmODIxNjVjOTAyOGU3YzU5MWFiOWE4ZDU4YmM5YzllODU2ODZmZGM0NTA1YjIwNQ"
-console.log(createToken(payload, secretKey))
+//console.log(createToken(payload, secretKey))
 //console.log(verifyToken(token , secretKey))
 //console.log(base64encoding(header))
 
@@ -27,10 +27,7 @@ function createToken(payload, secretKey){
 
     const hmac = crypto.createHmac('sha256', secretKey).update(encodedHeader + '.' + encodedPayload)
     const hmacDigest = hmac.digest('hex');
-    const mySignature = base64urlencoding(Buffer.from(hmacDigest))
-
-    console.log(mySignature)
-    console.log(encodedSignature)
+    const encodedSignature = base64urlencoding(Buffer.from(hmacDigest))
 
     return encodedHeader + '.' + encodedPayload + '.' + encodedSignature
 }
